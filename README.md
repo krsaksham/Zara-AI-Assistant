@@ -1,6 +1,6 @@
-# Zara
+# Zara AI Assistant
 
-This folder contains the Flask version of the Zara Personal AI Assistant project.
+A Flask-based web AI assistant developed as a first-year B.Tech CSE mini project.
 
 ## Project Structure
 
@@ -11,13 +11,12 @@ This folder contains the Flask version of the Zara Personal AI Assistant project
 - `read_this_file.txt` - demo file for the read-file feature
 - `requirements.txt` - Python dependencies
 
-## How To Run
+## Run Locally
 
-```powershell
-cd ".\zara"
-python .\app.py
+```bash
+pip install -r requirements.txt
+python app.py
 ```
-
 Then open [http://127.0.0.1:5002](http://127.0.0.1:5002).
 
 ## Features
