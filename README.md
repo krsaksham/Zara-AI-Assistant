@@ -14,7 +14,7 @@ This folder contains the Flask version of the Zara Personal AI Assistant project
 ## How To Run
 
 ```powershell
-cd ".\sinal zara"
+cd ".\zara"
 python .\app.py
 ```
 
