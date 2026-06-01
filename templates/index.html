@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zara Personal AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-welcome="{{ welcome_message }}">
+    <div class="page-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Team Py_Crew Presents</p>
+                <h1>Zara Personal AI Assistant</h1>
+                <p class="hero-copy">
+                    A Flask-based mini project by first-year B.Tech CSE students. Zara combines chat,
+                    browser voice input, selfie capture, and simple web-powered assistant features.
+                </p>
+            </div>
+            <div class="hero-card">
+                <p class="hero-card-title">Project Stack</p>
+                <p>Flask backend</p>
+                <p>HTML, CSS and JavaScript frontend</p>
+                <p>Browser speech and camera tools</p>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <section class="chat-panel">
+                <div class="panel-head">
+                    <div>
+                        <h2>Chat Window</h2>
+                        <p>Write, speak, or click a sample command.</p>
+                    </div>
+                    <span class="status-pill" id="status-pill">Ready</span>
+                </div>
+
+                <div class="chat-box" id="chat-box" aria-live="polite"></div>
+
+                <div class="input-panel">
+                    <label class="input-label" for="command-input">Type Your Command</label>
+                    <textarea id="command-input" rows="4" placeholder="Try something like: Wikipedia machine learning"></textarea>
+
+                    <div class="button-grid">
+                        <button type="button" id="send-button">Send</button>
+                        <button type="button" id="voice-button">Voice Input</button>
+                        <button type="button" id="capture-button">Capture Selfie</button>
+                        <button type="button" id="help-button">Help</button>
+                        <button type="button" id="clear-button">Clear Chat</button>
+                        <p class="button-tip">Press Enter to send. Use Shift + Enter for a new line.</p>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="info-panel">
+                <section class="info-card">
+                    <h3>About The Team</h3>
+                    <p>Team Py_Crew is a small group of first-year B.Tech CSE students.</p>
+                    <p>We divided the work across frontend design, backend logic, browser voice, camera capture, and feature testing.</p>
+                </section>
+
+                <section class="info-card">
+                    <h3>Sample Commands</h3>
+                    <div class="command-list">
+                        {% for command in sample_commands %}
+                        <button type="button" class="command-chip" data-command="{{ command }}">{{ command }}</button>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <section class="info-card">
+                    <h3>Project Notes</h3>
+                    <ul>
+                        <li>Voice input needs browser microphone permission.</li>
+                        <li>Selfie capture needs camera permission.</li>
+                        <li>News and Wikipedia features need internet access.</li>
+                        <li>Selfies are saved on the Desktop when available.</li>
+                    </ul>
+                </section>
+            </aside>
+        </main>
+    </div>
+
+    <div class="camera-modal hidden" id="camera-modal" aria-hidden="true">
+        <div class="camera-card">
+            <div class="camera-head">
+                <div>
+                    <p class="eyebrow">Camera Mode</p>
+                    <h3>Capture Your Selfie</h3>
+                </div>
+                <button type="button" class="ghost-button" id="close-camera-button">Close</button>
+            </div>
+            <video id="camera-video" autoplay playsinline></video>
+            <canvas id="camera-canvas" class="hidden"></canvas>
+            <div class="camera-actions">
+                <button type="button" id="snap-button">Capture & Save</button>
+                <p id="camera-status">Allow camera access to continue.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

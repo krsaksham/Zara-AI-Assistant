@@ -1,0 +1,6 @@
+Hello from Team Py_Crew.
+
+This is the demo text file for the Flask version of Zara.
+If Zara reads this on the screen and speaks it back, the file reading feature is working correctly.
+
+Thank you for trying our first-year B.Tech CSE mini project.
