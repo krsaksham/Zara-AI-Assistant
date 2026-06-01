@@ -1,4 +1,4 @@
-# Sinal Zara
+# Zara
 
 This folder contains the Flask version of the Zara Personal AI Assistant project.
 
